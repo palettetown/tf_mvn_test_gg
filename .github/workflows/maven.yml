@@ -35,7 +35,7 @@ jobs:
     - name: Build JAR with Maven
       run: mvn -B package
     - name: Build Docker Image
-      run: docker build -t us-central1-docker.pkg.dev/my-second-project-418213/my-docker-repo/quickstart-image:tag1 .
+      run: docker build -t us-central1-docker.pkg.dev/august-water-417802/my-docker-repo/quickstart-image:tag1 .
 
     # Configure Workload Identity Federation via a credentials file.
     - id: 'auth'
@@ -52,7 +52,7 @@ jobs:
       run: |-             
         gcloud auth login --brief --cred-file="${{ steps.auth.outputs.credentials_file_path }}" --no-user-output-enabled
         gcloud auth configure-docker us-central1-docker.pkg.dev
-        docker push us-central1-docker.pkg.dev/my-second-project-418213/my-docker-repo/quickstart-image:tag1
+        docker push us-central1-docker.pkg.dev/august-water-417802/my-docker-repo/quickstart-image:tag1
             
     #    echo "${{ steps.auth.outputs.credentials_file_path }}"
     
