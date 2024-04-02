@@ -10,6 +10,18 @@ steps:
   args: ['push', 'us-central1-docker.pkg.dev/august-water-417802/my-docker-repo/quickstart-image:tag1' ]
   id: 'Push Docker Image'
 
+
+apiVersion: run.googleapis.com/v1
+kind: cloudrun-job
+metadata:
+  name: JOB
+spec:
+  template:
+    spec:
+      template:
+        spec:
+          containers:
+          - image: 'us-central1-docker.pkg.dev/august-water-417802/my-docker-repo/quickstart-image:tag1'
 #- name: 'google/cloud-sdk:latest'
 #  entrypoint: 'sh'
 #  args:
