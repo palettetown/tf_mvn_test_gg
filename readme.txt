@@ -1,4 +1,4 @@
-EXECUTE FROM PROJECT 2, WHERE WIP POOL RESIDES
+<<<EXECUTE FROM PROJECT 2, WHERE WIP POOL RESIDES>>>
 
 1) WIF Pool is in project 1
 2) Service Account is in project 2
