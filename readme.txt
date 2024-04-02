@@ -1,3 +1,5 @@
+EXECUTE FROM PROJECT 2, WHERE WIP POOL RESIDES
+
 1) WIF Pool is in project 1
 2) Service Account is in project 2
 3) Bind iam-policy to Service Account (project 2) with WIF pool (project 1)
