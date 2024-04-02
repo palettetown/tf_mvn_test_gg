@@ -1,9 +1,9 @@
-FROM openjdk:8-jre-alpine
+#FROM openjdk:8-jre-alpine
 #COPY target/gs-maven-0.1.0.jar app.jar
 #ENTRYPOINT ["java","-jar","/app.jar"]
 
 # Use a base image with Maven installed
-#FROM maven:3.8.5-openjdk-11-slim AS build
+FROM maven:3.8.5-openjdk-11-slim AS build
 
 # Set the working directory in the container
 WORKDIR /usr/src/app
