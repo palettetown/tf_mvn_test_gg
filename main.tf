@@ -14,27 +14,6 @@ provider "google" {
   #credentials = file("C:\\MyPrograms\\GCP\\my-second-project-418213-c4584d61b2a8.json")
 }
 
-#data "google_compute_default_service_account" "default" {
-#}
-
-resource "google_service_account" "sa" {
-  account_id   = "projects/august-water-417802/serviceAccounts/proj1servacc@august-water-417802.iam.gserviceaccount.com"
-  display_name = "A service account that Chris can use"
-}
-
-resource "google_service_account_iam_member" "admin-account-iam" {
-  service_account_id = google_service_account.sa.name
-  role               = "roles/iam.workloadIdentityUser"
-  member             = "principalSet://iam.googleapis.com/projects/198122355685/locations/global/workloadIdentityPools/githubactions/attribute.repository/palettetown/tf_mvn_test_gg"
-}
-
-# Allow SA service account use the default GCE account
-#resource "google_service_account_iam_member" "gce-default-account-iam" {
-#  service_account_id = data.google_compute_default_service_account.default.name
-#  role               = "roles/iam.serviceAccountUser"
-#  member             = "serviceAccount:${google_service_account.sa.email}"
-#}
-
 # Task 2: Create Docker repository in GCP Artifact Registry
 #resource "google_artifact_registry_repository" "docker_repo" {
 #  provider      = google
